@@ -3,21 +3,9 @@ import textwrap
 from shutil import make_archive
 import random
 from PIL import Image, ImageFont, ImageDraw
+import gradio as gr
 
-#data
-'''account_name ='@' + 'a n a l y s e r__s t u d i o'
-content_title = 'content ideas for social media'
-sub_title = 'Inspirational  or Motivational Quotes'
-sub_title_explanation = 'Share inspiring quotes, affirmations, or motivational messages that resonate with your target audience. Use visually appealing graphics or images that complement the message. This type of content can uplift your followers mood, inspire them, and create a positive association with your brand.'
-sub_title2 = 'Add sample text Here'
-sub_title_explanation2 = 'This text is an example that helps you explain the subtopic in more detail. You have the chance to provide additional information and give a clear explanation of the subtopic. Use this opportunity to share your knowledge and insights, and help the reader understand the subtopic better.'
-sub_title3 = 'Add sample text Here'
-sub_title_explanation3 = 'This text is an example that helps you explain the subtopic in more detail. You have the chance to provide additional information and give a clear explanation of the subtopic. Use this opportunity to share your knowledge and insights, and help the reader understand the subtopic better.'
-sub_title4 = 'Add sample text Here'
-sub_title_explanation4 = 'This text is an example that helps you explain the subtopic in more detail. You have the chance to provide additional information and give a clear explanation of the subtopic. Use this opportunity to share your knowledge and insights, and help the reader understand the subtopic better.'
-sub_title5 = 'Add sample text Here'
-sub_title_explanation5 = 'This text is an example that helps you explain the subtopic in more detail. You have the chance to provide additional information and give a clear explanation of the subtopic. Use this opportunity to share your knowledge and insights, and help the reader understand the subtopic better.'
-'''
+
 def igc(content_title,
         account_name ='@' + 'a n a l y s e r__s t u d i o',
         sub_title='Add sample text Here',
@@ -102,7 +90,7 @@ def igc(content_title,
 
 igc('sam')
 
-import gradio as gr
+
 
 input_title = gr.inputs.Textbox(label="Title")
 input_sub_title = gr.inputs.Textbox(label="Subtitle")
@@ -135,4 +123,4 @@ demo = gr.Interface(
     output_filepath="Result.zip" ,
 )
 
-demo.launch(share=True)
+demo.launch(inline= False)
