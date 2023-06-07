@@ -107,4 +107,4 @@ demo = gr.Interface(
     fn=igc,
     inputs=[input_title,input_sub_title,input_sub_title_explanation,input_sub_title2,input_sub_title_explanation2,input_sub_title3,input_sub_title_explanation3,input_sub_title4,input_sub_title_explanation4,input_sub_title5,input_sub_title_explanation5],outputs="file",output_filepath="Result.zip")
 
-demo.launch(share=True)
+demo.launch(inline=False)
