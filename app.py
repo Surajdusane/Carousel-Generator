@@ -6,7 +6,8 @@ from PIL import Image, ImageFont, ImageDraw
 import gradio as gr
 
 
-def igc(content_title,
+
+def igc(content_title='content_title',
         account_name ='@' + 'a n a l y s e r__s t u d i o',
         sub_title='Add sample text Here',
         sub_title_explanation='This text is an example that helps you explain the subtopic in more detail. You have the chance to provide additional information and give a clear explanation of the subtopic. Use this opportunity to share your knowledge and insights, and help the reader understand the subtopic better.',
@@ -80,15 +81,13 @@ def igc(content_title,
             sub_title_list[i] = textwrap.fill(sub_title_list[i], width=12, break_long_words=False)
         else:
             sub_title_list[i] = textwrap.fill(sub_title_list[i], width=22, break_long_words=False)
-            sub_title_explanation_list[i] = textwrap.fill(sub_title_explanation_list[i], width=35, break_long_words=False)
-            sub_background_image_draw.text((450, 520), sub_title_list[i].title(), font= sub_title_font, fill=(0, 0, 0) )
-            sub_background_image_draw.text((517, 850), sub_title_explanation_list[i].title(), font=sub_title_explanation_font, fill=(0, 0, 0))
-            sub_background_image_draw.text((290, 540), str(i + 1), font=sub_title_number_font,fill=(255, 255, 255))
-            sub_background_image.save('Result/' + "Sub_Page" + str(i + 1) + ".png")
-        make_archive('Result', 'zip', 'Result')
-        return 'Result.zip'
-
-igc('sam')
+        sub_title_explanation_list[i] = textwrap.fill(sub_title_explanation_list[i], width=35, break_long_words=False)
+        sub_background_image_draw.text((450, 520), sub_title_list[i].title(), font= sub_title_font, fill=(0, 0, 0) )
+        sub_background_image_draw.text((517, 850), sub_title_explanation_list[i].title(), font=sub_title_explanation_font, fill=(0, 0, 0))
+        sub_background_image_draw.text((290, 540), str(i + 1), font=sub_title_number_font,fill=(255, 255, 255))
+        sub_background_image.save('Result/' + "Sub_Page" + str(i + 1) + ".png")
+    make_archive('Result', 'zip', 'Result')
+    return 'Result.zip'
 
 
 
@@ -106,21 +105,6 @@ input_sub_title_explanation5 = gr.inputs.Textbox(label="Subtitle 5 Explanation")
 
 demo = gr.Interface(
     fn=igc,
-    inputs=[
-        input_title,
-        input_sub_title,
-        input_sub_title_explanation,
-        input_sub_title2,
-        input_sub_title_explanation2,
-        input_sub_title3,
-        input_sub_title_explanation3,
-        input_sub_title4,
-        input_sub_title_explanation4,
-        input_sub_title5,
-        input_sub_title_explanation5,
-    ],
-    outputs="file",
-    output_filepath="Result.zip" ,
-)
+    inputs=[input_title,input_sub_title,input_sub_title_explanation,input_sub_title2,input_sub_title_explanation2,input_sub_title3,input_sub_title_explanation3,input_sub_title4,input_sub_title_explanation4,input_sub_title5,input_sub_title_explanation5],outputs="file",output_filepath="Result.zip")
 
-demo.launch(inline= False)
+demo.launch(share=True)
