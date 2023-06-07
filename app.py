@@ -37,8 +37,8 @@ def igc(content_title='content_title',
     rnsubbg = random.choice(subbg)
 
     #Add Account name on image
-    account_name = '@' + 'a n a l y s e r__s t u d i o'
-    background_image = Image.open('Background/'+rntitlebg+'.png')
+    account_name = '@' + 'a l g o r i t h m i c a i t i f y'
+    background_image = Image.open('Background/'+rntitlebg+'.png') 
     sub_background_image = Image.open('Background/'+rnsubbg+'.png')
     background_image = background_image.resize((2000 , 2000))
     sub_background_image = sub_background_image.resize((2000 , 2000))
